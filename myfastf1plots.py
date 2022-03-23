@@ -2,8 +2,7 @@ from matplotlib import pyplot as plt
 
 
 class MyFastF1Plots:
-    @staticmethod
-    def laptime_over_race_plot(race, driver1, driver1_color, driver2, driver2_color, plot_title):
+    def laptime_over_race_plot(self, race, driver1, driver1_color, driver2, driver2_color, plot_title):
         driver1_ = race.laps.pick_driver(driver1)
         driver2_ = race.laps.pick_driver(driver2)
 
@@ -14,7 +13,6 @@ class MyFastF1Plots:
         ax.set_xlabel("Lap Number")
         ax.set_ylabel("Lap Time")
 
-    @staticmethod
     def speed_over_lap_plot(self, session, driver1, driver1_color, driver2, driver2_color, plot_title):
         driver1_fastest = session.laps.pick_driver(driver1).pick_fastest()
         driver1_car_data = driver1_fastest.get_car_data()
@@ -33,7 +31,6 @@ class MyFastF1Plots:
         ax.set_ylabel("Speed [Km/h]")
         ax.legend()
 
-    @staticmethod
     def lap_telemetry_plot(self, plot_title, session, driver1, driver1_color, driver2=None, driver2_color=None):
         driver1_fastest_lap = session.laps.pick_driver(driver1).pick_fastest()
         driver1_car_data = driver1_fastest_lap.get_car_data()
@@ -66,6 +63,5 @@ class MyFastF1Plots:
         axs[0].set_ylabel("%")
         axs[1].set_ylabel("%")
 
-    @staticmethod
     def show_plots(self):
         plt.show()
