@@ -9,7 +9,7 @@ if not os.path.exists(cache_path):
 fastf1.Cache.enable_cache(cache_path)  # optional but recommended
 fastf1.plotting.setup_mpl()
 
-session = fastf1.get_session(2022, 'Sakir', 'R')
+session = fastf1.get_session(2022, 'Jeddah', 'R')
 session.load()
 
 myplots = myfastf1plots.MyFastF1Plots()

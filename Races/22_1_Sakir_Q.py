@@ -1,6 +1,6 @@
-import os
 import fastf1.plotting
 import myfastf1plots
+import os
 
 cache_path = 'cache'
 if not os.path.exists(cache_path):
@@ -13,7 +13,10 @@ session = fastf1.get_session(2022, 'Sakir', 'Q')
 session.load()
 
 myplots = myfastf1plots.MyFastF1Plots()
-myplots.speed_over_lap_plot(session, driver1='LEC', driver1_color='red', driver2='VER', driver2_color='blue', plot_title='LEC vs VER')
-myplots.lap_telemetry_plot(plot_title='LEC vs VER', session=session, driver1='LEC', driver1_color='red', driver2='VER', driver2_color='blue')
+myplots.speed_plot(plot_title='LEC vs VER', session=session, driver1='LEC', driver1_color='red', driver2='VER',
+                   driver2_color='blue')
+myplots.telemetry_plot(plot_title='LEC vs VER', session=session, driver1='LEC', driver1_color='red',
+                       # driver2='VER', driver2_color='blue'
+                       )
 
 myplots.show_plots()
